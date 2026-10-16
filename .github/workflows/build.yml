@@ -17,7 +17,9 @@ jobs:
           gradle-version: 8.7
       - name: Build debug APK
         run: gradle assembleDebug --no-daemon
+      - name: Renomear APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk pokeidle.mobile.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: PokeIdleKeeper-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: pokeidle.mobile
+          path: pokeidle.mobile.apk
