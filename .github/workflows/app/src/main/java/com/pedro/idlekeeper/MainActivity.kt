@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             mediaPlaybackRequiresUserGesture = false
             cacheMode = WebSettings.LOAD_DEFAULT
             mixedContentMode = WebSettings.MIXED_CONTENT_NEVER_ALLOW
+               userAgentString = userAgentString.replace("; wv", "").replace(" Version/4.0", "")
         }
         CookieManager.getInstance().apply {
             setAcceptCookie(true)
