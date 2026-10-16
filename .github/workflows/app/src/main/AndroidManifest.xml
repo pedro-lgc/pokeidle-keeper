@@ -11,7 +11,8 @@
 
     <application
         android:allowBackup="false"
-        android:label="PokeIdle Keeper"
+        android:label="PokeIdle"
+        android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="false"
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
