@@ -3,6 +3,9 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,3 +26,10 @@ jobs:
         with:
           name: pokeidle.mobile
           path: pokeidle.mobile.apk
+      - name: Publicar Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v${{ github.run_number }}" pokeidle.mobile.apk \
+            --title "PokeIdle v${{ github.run_number }}" \
+            --notes "Build automática do PokeIdle."
